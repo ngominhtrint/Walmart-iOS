@@ -21,6 +21,7 @@ class ThankViewController: UIViewController {
     }
     
     @IBAction func onClosedAction(_ sender: Any) {
-        self.navigationController?.popToRootViewController(animated: true)
+        (navigationController as! ProductNavigationController).isReset = true
+        navigationController?.popToRootViewController(animated: true)
     }
 }

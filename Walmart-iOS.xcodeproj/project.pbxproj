@@ -22,6 +22,7 @@
 		EB5B3D4020579EDF007FABC3 /* CheckoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5B3D3F20579EDF007FABC3 /* CheckoutViewController.swift */; };
 		EB5B3D442057C03F007FABC3 /* CartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5B3D422057C03F007FABC3 /* CartCell.swift */; };
 		EB5B3D452057C03F007FABC3 /* CartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB5B3D432057C03F007FABC3 /* CartCell.xib */; };
+		EB5B3D47205839AD007FABC3 /* ProductNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5B3D46205839AD007FABC3 /* ProductNavigationController.swift */; };
 		EBDD964020578815009E33C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDD963F20578815009E33C5 /* AppDelegate.swift */; };
 		EBDD964520578815009E33C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBDD964320578815009E33C5 /* Main.storyboard */; };
 		EBDD964820578815009E33C5 /* Walmart_iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EBDD964620578815009E33C5 /* Walmart_iOS.xcdatamodeld */; };
@@ -69,6 +70,7 @@
 		EB5B3D3F20579EDF007FABC3 /* CheckoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutViewController.swift; sourceTree = "<group>"; };
 		EB5B3D422057C03F007FABC3 /* CartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCell.swift; sourceTree = "<group>"; };
 		EB5B3D432057C03F007FABC3 /* CartCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartCell.xib; sourceTree = "<group>"; };
+		EB5B3D46205839AD007FABC3 /* ProductNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductNavigationController.swift; sourceTree = "<group>"; };
 		EBDD963C20578815009E33C5 /* Walmart-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Walmart-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBDD963F20578815009E33C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBDD964420578815009E33C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 			children = (
 				EB5B3D2A20578A8A007FABC3 /* Cell */,
 				EB5B3D2720578A59007FABC3 /* ProductViewController.swift */,
+				EB5B3D46205839AD007FABC3 /* ProductNavigationController.swift */,
 			);
 			path = Product;
 			sourceTree = "<group>";
@@ -584,6 +587,7 @@
 				EB5B3D2820578A59007FABC3 /* ProductViewController.swift in Sources */,
 				EB5B3D3A20579DFA007FABC3 /* ThankViewController.swift in Sources */,
 				EB5B3D2D20578AA6007FABC3 /* ProductCell.swift in Sources */,
+				EB5B3D47205839AD007FABC3 /* ProductNavigationController.swift in Sources */,
 				EBDD964820578815009E33C5 /* Walmart_iOS.xcdatamodeld in Sources */,
 				EB5B3D442057C03F007FABC3 /* CartCell.swift in Sources */,
 				EBDD964020578815009E33C5 /* AppDelegate.swift in Sources */,

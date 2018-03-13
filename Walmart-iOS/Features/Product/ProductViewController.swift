@@ -21,19 +21,27 @@ class ProductViewController: UIViewController {
         super.viewDidLoad()
 
         setupView()
-        
-        let mapper = Mapper<ProductResponse>()
-        let productsData = StubResponse.fromJSONFile("products")
-        if let productsJSON = try! JSONSerialization.jsonObject(with: productsData, options: []) as? [String: Any] {
-            guard let productResponse = mapper.map(JSON: productsJSON) else { return }
-            dataSources = productResponse.products ?? []
-            tableView.reloadData()
-        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: false)
+        
+        setupData()
+    }
+    
+    private func setupData() {
+        if (navigationController as! ProductNavigationController).isReset {
+            (navigationController as! ProductNavigationController).isReset = false
+            
+            let mapper = Mapper<ProductResponse>()
+            let productsData = StubResponse.fromJSONFile("products")
+            if let productsJSON = try! JSONSerialization.jsonObject(with: productsData, options: []) as? [String: Any] {
+                guard let productResponse = mapper.map(JSON: productsJSON) else { return }
+                dataSources = productResponse.products ?? []
+                tableView.reloadData()
+            }
+        }
     }
     
     private func setupView() {

@@ -86,9 +86,11 @@ extension CartViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let remove = UITableViewRowAction(style: .normal, title: "Remove") { action, index in
             self.delegate?.onRemovedProduct(id: self.dataSources[indexPath.row].id!)
-            
             self.dataSources.remove(at: indexPath.row)
             self.tableView.reloadData()
+            
+            self.updateQuantity()
+            self.updateAmount()
         }
         remove.backgroundColor = UIColor.red
         return [remove]
