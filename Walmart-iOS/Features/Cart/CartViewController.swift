@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol CartViewControllerDelegate: class {
+    func onRemovedProduct(id: String)
+}
+
 class CartViewController: UIViewController {
 
     @IBOutlet weak var lbTotalAmount: UILabel!
@@ -15,6 +19,7 @@ class CartViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
 
     private let CartCellReuseIdentifier = "CartCellReuseIdentifier"
+    weak var delegate: CartViewControllerDelegate?
     var dataSources: [Product] = []
     
     override func viewDidLoad() {
@@ -24,6 +29,7 @@ class CartViewController: UIViewController {
     }
     
     private func setupView() {
+        tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -72,6 +78,23 @@ extension CartViewController: UITableViewDataSource {
     }
 }
 
+extension CartViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let remove = UITableViewRowAction(style: .normal, title: "Remove") { action, index in
+            self.delegate?.onRemovedProduct(id: self.dataSources[indexPath.row].id!)
+            
+            self.dataSources.remove(at: indexPath.row)
+            self.tableView.reloadData()
+        }
+        remove.backgroundColor = UIColor.red
+        return [remove]
+    }
+}
+
 extension CartViewController: CartCellDelegate {
     func onQuantityIncreased(indexPath: IndexPath) {
         dataSources[indexPath.row].quantity += 1
@@ -81,7 +104,7 @@ extension CartViewController: CartCellDelegate {
     }
     
     func onQuantityDecreased(indexPath: IndexPath) {
-        if dataSources[indexPath.row].quantity > 0 {
+        if dataSources[indexPath.row].quantity > 1 {
             dataSources[indexPath.row].quantity -= 1
         }
         updateCellQuantityLabel(indexPath: indexPath)

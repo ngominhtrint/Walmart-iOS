@@ -38,7 +38,6 @@ class ProductViewController: UIViewController {
     
     private func setupView() {
         registerCell()
-        tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -52,6 +51,7 @@ class ProductViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "CartViewController", let cartViewController = segue.destination as? CartViewController {
             cartViewController.dataSources = dataSources.filter { $0.isSelected }
+            cartViewController.delegate = self
         }
     }
 }
@@ -63,8 +63,9 @@ extension ProductViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: ProductCellReuseIdentifier, for: indexPath) as? ProductCell {
+            cell.delegate = self
+            cell.indexPath = indexPath
             cell.product = dataSources[indexPath.row]
-            cell.accessoryType = dataSources[indexPath.row].isSelected ? .checkmark : .none
             cell.selectionStyle = .none
             return cell
         }
@@ -72,10 +73,22 @@ extension ProductViewController: UITableViewDataSource {
     }
 }
 
-extension ProductViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+extension ProductViewController: ProductCellDelegate {
+    func addToCart(indexPath: IndexPath) {
         dataSources[indexPath.row].isSelected = !dataSources[indexPath.row].isSelected
         dataSources[indexPath.row].quantity = 1
         tableView.reloadData()
+    }
+}
+
+extension ProductViewController: CartViewControllerDelegate {
+    func onRemovedProduct(id: String) {
+        for (index, product) in dataSources.enumerated() {
+            if product.id! == id {
+                dataSources[index].isSelected = false
+                dataSources[index].quantity = 0
+                tableView.reloadData()
+            }
+        }
     }
 }

@@ -30,7 +30,7 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$89.99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wEQ-Xd-HPb">
                         <rect key="frame" x="144" y="8" width="59" height="21"/>
                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.53957804568527923" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.54117647058823526" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="was $149.99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fku-2C-Z38">
@@ -51,19 +51,40 @@
                         <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0m4-RB-wxM">
+                        <rect key="frame" x="144" y="100" width="120" height="36"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.54117647058823526" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="120" id="23l-hZ-NGY"/>
+                            <constraint firstAttribute="height" constant="36" id="AIT-Co-dDs"/>
+                        </constraints>
+                        <state key="normal" title="Add to Cart">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <integer key="value" value="6"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="onAddToCartClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="w8o-YR-GIP"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Ul2-gz-J2u" firstAttribute="leading" secondItem="Lny-DI-Rs2" secondAttribute="trailing" constant="8" id="2bL-q3-nKj"/>
                     <constraint firstItem="s1l-ZD-Fm9" firstAttribute="top" secondItem="wEQ-Xd-HPb" secondAttribute="bottom" constant="8" id="4Q5-fb-hTo"/>
+                    <constraint firstItem="0m4-RB-wxM" firstAttribute="leading" secondItem="Lny-DI-Rs2" secondAttribute="trailing" constant="8" id="7fA-z2-zFD"/>
+                    <constraint firstItem="0m4-RB-wxM" firstAttribute="top" secondItem="Ul2-gz-J2u" secondAttribute="bottom" constant="16" id="EY3-ds-LSA"/>
                     <constraint firstItem="s1l-ZD-Fm9" firstAttribute="leading" secondItem="Lny-DI-Rs2" secondAttribute="trailing" constant="8" id="El2-Mi-3L0"/>
                     <constraint firstItem="wEQ-Xd-HPb" firstAttribute="leading" secondItem="Lny-DI-Rs2" secondAttribute="trailing" constant="8" id="FHB-6U-9Yc"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Fku-2C-Z38" secondAttribute="trailing" constant="8" id="GTp-sB-Hkn"/>
                     <constraint firstItem="wEQ-Xd-HPb" firstAttribute="top" secondItem="Lny-DI-Rs2" secondAttribute="top" id="HNf-Jj-cKF"/>
                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Lny-DI-Rs2" secondAttribute="bottom" constant="16" id="M3D-ps-geq"/>
+                    <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="0m4-RB-wxM" secondAttribute="bottom" constant="12" id="RgT-XK-kbG"/>
                     <constraint firstItem="Ul2-gz-J2u" firstAttribute="top" secondItem="s1l-ZD-Fm9" secondAttribute="bottom" constant="8" id="ZLP-p7-n4e"/>
                     <constraint firstItem="Fku-2C-Z38" firstAttribute="centerY" secondItem="wEQ-Xd-HPb" secondAttribute="centerY" id="ZRa-wX-PNP"/>
                     <constraint firstAttribute="trailingMargin" secondItem="Ul2-gz-J2u" secondAttribute="trailing" constant="8" id="aH1-1o-33d"/>
-                    <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="Ul2-gz-J2u" secondAttribute="bottom" constant="16" id="bzh-ha-Quf"/>
                     <constraint firstAttribute="trailing" secondItem="s1l-ZD-Fm9" secondAttribute="trailing" constant="8" id="dMw-Bc-jaW"/>
                     <constraint firstItem="Lny-DI-Rs2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="jF7-he-4gj"/>
                     <constraint firstItem="Fku-2C-Z38" firstAttribute="leading" secondItem="wEQ-Xd-HPb" secondAttribute="trailing" constant="8" id="jZq-IP-uvM"/>
@@ -72,6 +93,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="btnAddToCart" destination="0m4-RB-wxM" id="SJU-WQ-f6Q"/>
                 <outlet property="ivProduct" destination="Lny-DI-Rs2" id="HgO-e0-2yk"/>
                 <outlet property="lbCurrentPrice" destination="wEQ-Xd-HPb" id="t1r-9d-nUH"/>
                 <outlet property="lbName" destination="s1l-ZD-Fm9" id="XhI-mf-JeT"/>

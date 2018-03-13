@@ -9,6 +9,10 @@
 import UIKit
 import AlamofireImage
 
+protocol ProductCellDelegate: class {
+    func addToCart(indexPath: IndexPath)
+}
+
 class ProductCell: UITableViewCell {
 
     @IBOutlet weak var ivProduct: UIImageView!
@@ -16,10 +20,17 @@ class ProductCell: UITableViewCell {
     @IBOutlet weak var lbOriginPrice: UILabel!
     @IBOutlet weak var lbName: UILabel!
     @IBOutlet weak var lbShipping: UILabel!
+    @IBOutlet weak var btnAddToCart: UIButton!
+    
+    private let blue = UIColor(red: 0, green: 0, blue: 138/255, alpha: 1.0)
+    private let green = UIColor(red: 0, green: 128/255, blue: 0, alpha: 1.0)
+    
+    weak var delegate: ProductCellDelegate?
+    var indexPath: IndexPath!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
     }
     
     var product: Product? {
@@ -31,7 +42,13 @@ class ProductCell: UITableViewCell {
                 lbName.text = product.name ?? ""
                 lbShipping.text = product.ship ?? ""
                 lbOriginPrice.text = originPrice == currentPrice ? "" : "was $\(originPrice)"
+                btnAddToCart.setTitle(product.isSelected ? "Added" : "Add to Cart", for: .normal)
+                btnAddToCart.backgroundColor = product.isSelected ? green : blue
             }
         }
+    }
+    
+    @IBAction func onAddToCartClicked(_ sender: Any) {
+        delegate?.addToCart(indexPath: indexPath)
     }
 }
