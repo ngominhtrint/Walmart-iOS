@@ -14,4 +14,13 @@ class ThankViewController: UIViewController {
         super.viewDidLoad()
 
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
+    @IBAction func onClosedAction(_ sender: Any) {
+        self.navigationController?.popToRootViewController(animated: true)
+    }
 }

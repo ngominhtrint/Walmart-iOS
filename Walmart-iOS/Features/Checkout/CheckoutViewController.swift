@@ -10,9 +10,18 @@ import UIKit
 
 class CheckoutViewController: UIViewController {
 
+    @IBOutlet weak var tfCardNumber: UITextField!
+    @IBOutlet weak var tfExpiredDate: UITextField!
+    @IBOutlet weak var tfCvv: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        tfCardNumber.becomeFirstResponder()
     }
 }

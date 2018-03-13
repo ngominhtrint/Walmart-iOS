@@ -31,6 +31,11 @@ class ProductViewController: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: false)
+    }
+    
     private func setupView() {
         registerCell()
         tableView.delegate = self
