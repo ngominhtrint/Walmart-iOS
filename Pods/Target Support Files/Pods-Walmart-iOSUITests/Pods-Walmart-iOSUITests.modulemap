@@ -1,0 +1,6 @@
+framework module Pods_Walmart_iOSUITests {
+  umbrella header "Pods-Walmart-iOSUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

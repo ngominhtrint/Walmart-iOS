@@ -1,24 +1,198 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rfo-H9-lg9">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Products-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ProductViewController" customModule="Walmart_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ptA-J9-hCx">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ptA-J9-hCx" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ERX-cX-DmE"/>
+                            <constraint firstItem="ptA-J9-hCx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="P6G-iB-woa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ptA-J9-hCx" secondAttribute="bottom" id="aaY-CH-gj4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ptA-J9-hCx" secondAttribute="trailing" id="l43-bf-q7L"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Products" id="Jvd-hg-Ja6">
+                        <barButtonItem key="rightBarButtonItem" title="Cart" id="M55-RE-aV0">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="43j-IB-ZaX" kind="push" identifier="CartViewController" id="rLs-H5-liz"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="ptA-J9-hCx" id="lCu-VX-GaF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="476" y="133.5832083958021"/>
+        </scene>
+        <!--Cart-->
+        <scene sceneID="yfW-zY-vTP">
+            <objects>
+                <viewController storyboardIdentifier="CartViewController" id="43j-IB-ZaX" customClass="CartViewController" customModule="Walmart_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="s6X-og-Ynu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qsw-do-Goz">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="617"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C1d-X2-vhq">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total amount: $218.99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NG2-vp-vT6">
+                                        <rect key="frame" x="8" y="16" width="153.5" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7 items" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rNe-6b-vW8">
+                                        <rect key="frame" x="317" y="16" width="50" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.074509803920000006" green="0.49019607840000001" blue="0.75686274509999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="rNe-6b-vW8" secondAttribute="trailing" constant="8" id="7oX-jX-Z1a"/>
+                                    <constraint firstItem="NG2-vp-vT6" firstAttribute="centerY" secondItem="C1d-X2-vhq" secondAttribute="centerY" id="CUI-Ah-a0a"/>
+                                    <constraint firstItem="rNe-6b-vW8" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="NG2-vp-vT6" secondAttribute="trailing" constant="8" id="NTe-M5-wY8"/>
+                                    <constraint firstItem="rNe-6b-vW8" firstAttribute="centerY" secondItem="C1d-X2-vhq" secondAttribute="centerY" id="PpY-5L-jJi"/>
+                                    <constraint firstItem="NG2-vp-vT6" firstAttribute="leading" secondItem="C1d-X2-vhq" secondAttribute="leading" constant="8" id="VDd-Xi-SnR"/>
+                                    <constraint firstAttribute="height" constant="50" id="uqE-Pv-hcg"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="C1d-X2-vhq" firstAttribute="trailing" secondItem="Cyq-SY-2T3" secondAttribute="trailing" id="2ww-KI-yXq"/>
+                            <constraint firstItem="C1d-X2-vhq" firstAttribute="leading" secondItem="Cyq-SY-2T3" secondAttribute="leading" id="FP5-z7-HDc"/>
+                            <constraint firstItem="Qsw-do-Goz" firstAttribute="leading" secondItem="Cyq-SY-2T3" secondAttribute="leading" id="Lc7-1G-QrE"/>
+                            <constraint firstItem="Qsw-do-Goz" firstAttribute="top" secondItem="s6X-og-Ynu" secondAttribute="top" id="VKD-NJ-vdi"/>
+                            <constraint firstItem="Cyq-SY-2T3" firstAttribute="trailing" secondItem="Qsw-do-Goz" secondAttribute="trailing" id="bcW-7Y-nIf"/>
+                            <constraint firstItem="C1d-X2-vhq" firstAttribute="top" secondItem="Qsw-do-Goz" secondAttribute="bottom" id="dxc-6f-VMh"/>
+                            <constraint firstItem="Cyq-SY-2T3" firstAttribute="bottom" secondItem="C1d-X2-vhq" secondAttribute="bottom" id="zRZ-8F-SFw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Cyq-SY-2T3"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Cart" id="pDN-ua-qFi">
+                        <barButtonItem key="rightBarButtonItem" title="Checkout" id="fZ1-Hl-jbp">
+                            <connections>
+                                <segue destination="Wf7-FF-r7T" kind="push" id="h0N-9S-D34"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="lbTotalAmount" destination="NG2-vp-vT6" id="21k-Dx-9di"/>
+                        <outlet property="lbTotalItems" destination="rNe-6b-vW8" id="uKe-n2-exL"/>
+                        <outlet property="tableView" destination="Qsw-do-Goz" id="Kcl-qG-2FV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="evo-MQ-b0F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1320.8" y="133.5832083958021"/>
+        </scene>
+        <!--Checkout-->
+        <scene sceneID="WuH-Ww-nzm">
+            <objects>
+                <viewController storyboardIdentifier="CheckoutViewController" id="Wf7-FF-r7T" customClass="CheckoutViewController" customModule="Walmart_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7bP-Ui-uFq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="7AD-Gw-VbA"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Checkout" id="Ts6-H9-3hx"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="isV-07-n5m" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2270" y="134"/>
+        </scene>
+        <!--Thank View Controller-->
+        <scene sceneID="8Ki-c9-xPi">
+            <objects>
+                <viewController storyboardIdentifier="ThankViewController" id="auk-xQ-4wS" customClass="ThankViewController" customModule="Walmart_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="f0n-CZ-DHg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cart" translatesAutoresizingMaskIntoConstraints="NO" id="xH0-qa-99S">
+                                <rect key="frame" x="123" y="189.5" width="128" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="128" id="1xj-uk-zTC"/>
+                                    <constraint firstAttribute="height" constant="128" id="c7F-SO-L6A"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thanks for order" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uFB-yZ-lZw">
+                                <rect key="frame" x="93.5" y="357.5" width="189" height="31.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.074509803921568626" green="0.49019607843137253" blue="0.75686274509803919" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="xH0-qa-99S" firstAttribute="centerX" secondItem="f0n-CZ-DHg" secondAttribute="centerX" id="8v5-8w-gJe"/>
+                            <constraint firstItem="uFB-yZ-lZw" firstAttribute="centerX" secondItem="f0n-CZ-DHg" secondAttribute="centerX" id="JVr-tC-JUK"/>
+                            <constraint firstItem="xH0-qa-99S" firstAttribute="centerY" secondItem="f0n-CZ-DHg" secondAttribute="centerY" constant="-80" id="MJM-Tq-edT"/>
+                            <constraint firstItem="uFB-yZ-lZw" firstAttribute="top" secondItem="xH0-qa-99S" secondAttribute="bottom" constant="40" id="tsc-zi-vDl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="e9L-HF-JAd"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tIv-oT-3zI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3175" y="134"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="y5g-1h-ADR">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rfo-H9-lg9" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pwh-5G-VK5">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.074509803921568626" green="0.49019607843137253" blue="0.75686274509803919" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ghQ-w4-9cK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5B0-Jw-Qrj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-306" y="134"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="cart" width="128" height="128"/>
+    </resources>
 </document>

@@ -1,0 +1,6 @@
+framework module Pods_Walmart_iOS {
+  umbrella header "Pods-Walmart-iOS-umbrella.h"
+
+  export *
+  module * { export * }
+}

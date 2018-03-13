@@ -7,8 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		403F59A440E686EE23316047 /* Pods_Walmart_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9482747988AAA24E6F1715C4 /* Pods_Walmart_iOS.framework */; };
+		5A0D615A1F584CD6821F40F7 /* Pods_Walmart_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 219F974FFE94691C34C68F02 /* Pods_Walmart_iOSUITests.framework */; };
+		B089963D14BDEAF3B198F694 /* Pods_Walmart_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1FE38595D2B48536AF13F3E /* Pods_Walmart_iOSTests.framework */; };
+		EB5B3D2820578A59007FABC3 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5B3D2720578A59007FABC3 /* ProductViewController.swift */; };
+		EB5B3D2D20578AA6007FABC3 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5B3D2B20578AA6007FABC3 /* ProductCell.swift */; };
+		EB5B3D2E20578AA6007FABC3 /* ProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB5B3D2C20578AA6007FABC3 /* ProductCell.xib */; };
+		EB5B3D312057923F007FABC3 /* StubResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5B3D302057923F007FABC3 /* StubResponse.swift */; };
+		EB5B3D3320579278007FABC3 /* products.json in Resources */ = {isa = PBXBuildFile; fileRef = EB5B3D3220579278007FABC3 /* products.json */; };
+		EB5B3D3520579368007FABC3 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5B3D3420579368007FABC3 /* Product.swift */; };
+		EB5B3D3720579517007FABC3 /* ProductResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5B3D3620579517007FABC3 /* ProductResponse.swift */; };
+		EB5B3D3A20579DFA007FABC3 /* ThankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5B3D3920579DFA007FABC3 /* ThankViewController.swift */; };
+		EB5B3D3D20579E65007FABC3 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5B3D3C20579E65007FABC3 /* CartViewController.swift */; };
+		EB5B3D4020579EDF007FABC3 /* CheckoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5B3D3F20579EDF007FABC3 /* CheckoutViewController.swift */; };
+		EB5B3D442057C03F007FABC3 /* CartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5B3D422057C03F007FABC3 /* CartCell.swift */; };
+		EB5B3D452057C03F007FABC3 /* CartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB5B3D432057C03F007FABC3 /* CartCell.xib */; };
 		EBDD964020578815009E33C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDD963F20578815009E33C5 /* AppDelegate.swift */; };
-		EBDD964220578815009E33C5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDD964120578815009E33C5 /* ViewController.swift */; };
 		EBDD964520578815009E33C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBDD964320578815009E33C5 /* Main.storyboard */; };
 		EBDD964820578815009E33C5 /* Walmart_iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EBDD964620578815009E33C5 /* Walmart_iOS.xcdatamodeld */; };
 		EBDD964A20578815009E33C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBDD964920578815009E33C5 /* Assets.xcassets */; };
@@ -35,9 +49,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		15335C781AB61EFE139A6EDE /* Pods-Walmart-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Walmart-iOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Walmart-iOSTests/Pods-Walmart-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		219F974FFE94691C34C68F02 /* Pods_Walmart_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Walmart_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		62CAD06B59016705961CCFC6 /* Pods-Walmart-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Walmart-iOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Walmart-iOSTests/Pods-Walmart-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		9482747988AAA24E6F1715C4 /* Pods_Walmart_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Walmart_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1FE38595D2B48536AF13F3E /* Pods_Walmart_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Walmart_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D64AD5BD374331795E9A911E /* Pods-Walmart-iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Walmart-iOSUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Walmart-iOSUITests/Pods-Walmart-iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
+		E1BFF0043670457695B19E9B /* Pods-Walmart-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Walmart-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Walmart-iOS/Pods-Walmart-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		E5FA39AA0246D5E75451CCDA /* Pods-Walmart-iOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Walmart-iOSUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Walmart-iOSUITests/Pods-Walmart-iOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		EB5B3D2720578A59007FABC3 /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
+		EB5B3D2B20578AA6007FABC3 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		EB5B3D2C20578AA6007FABC3 /* ProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCell.xib; sourceTree = "<group>"; };
+		EB5B3D302057923F007FABC3 /* StubResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubResponse.swift; sourceTree = "<group>"; };
+		EB5B3D3220579278007FABC3 /* products.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = products.json; sourceTree = "<group>"; };
+		EB5B3D3420579368007FABC3 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		EB5B3D3620579517007FABC3 /* ProductResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductResponse.swift; sourceTree = "<group>"; };
+		EB5B3D3920579DFA007FABC3 /* ThankViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThankViewController.swift; sourceTree = "<group>"; };
+		EB5B3D3C20579E65007FABC3 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		EB5B3D3F20579EDF007FABC3 /* CheckoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutViewController.swift; sourceTree = "<group>"; };
+		EB5B3D422057C03F007FABC3 /* CartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCell.swift; sourceTree = "<group>"; };
+		EB5B3D432057C03F007FABC3 /* CartCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartCell.xib; sourceTree = "<group>"; };
 		EBDD963C20578815009E33C5 /* Walmart-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Walmart-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBDD963F20578815009E33C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EBDD964120578815009E33C5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EBDD964420578815009E33C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EBDD964720578815009E33C5 /* Walmart_iOS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Walmart_iOS.xcdatamodel; sourceTree = "<group>"; };
 		EBDD964920578815009E33C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +82,7 @@
 		EBDD965E20578816009E33C5 /* Walmart-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Walmart-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBDD966220578816009E33C5 /* Walmart_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walmart_iOSUITests.swift; sourceTree = "<group>"; };
 		EBDD966420578816009E33C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F8760BE5E2020F684ECAB1C6 /* Pods-Walmart-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Walmart-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Walmart-iOS/Pods-Walmart-iOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				403F59A440E686EE23316047 /* Pods_Walmart_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B089963D14BDEAF3B198F694 /* Pods_Walmart_iOSTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +106,124 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A0D615A1F584CD6821F40F7 /* Pods_Walmart_iOSUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		430EADEE54A9CA50B44566E3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E1BFF0043670457695B19E9B /* Pods-Walmart-iOS.debug.xcconfig */,
+				F8760BE5E2020F684ECAB1C6 /* Pods-Walmart-iOS.release.xcconfig */,
+				15335C781AB61EFE139A6EDE /* Pods-Walmart-iOSTests.debug.xcconfig */,
+				62CAD06B59016705961CCFC6 /* Pods-Walmart-iOSTests.release.xcconfig */,
+				E5FA39AA0246D5E75451CCDA /* Pods-Walmart-iOSUITests.debug.xcconfig */,
+				D64AD5BD374331795E9A911E /* Pods-Walmart-iOSUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		621667C00A5261E848458880 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9482747988AAA24E6F1715C4 /* Pods_Walmart_iOS.framework */,
+				B1FE38595D2B48536AF13F3E /* Pods_Walmart_iOSTests.framework */,
+				219F974FFE94691C34C68F02 /* Pods_Walmart_iOSUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EB5B3D24205789C5007FABC3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EB5B3D3220579278007FABC3 /* products.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		EB5B3D25205789CF007FABC3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EB5B3D3420579368007FABC3 /* Product.swift */,
+				EB5B3D3620579517007FABC3 /* ProductResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EB5B3D26205789D7007FABC3 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				EB5B3D3E20579EC1007FABC3 /* Checkout */,
+				EB5B3D3B20579E58007FABC3 /* Cart */,
+				EB5B3D3820579DDE007FABC3 /* Thank */,
+				EB5B3D2920578A80007FABC3 /* Product */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		EB5B3D2920578A80007FABC3 /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				EB5B3D2A20578A8A007FABC3 /* Cell */,
+				EB5B3D2720578A59007FABC3 /* ProductViewController.swift */,
+			);
+			path = Product;
+			sourceTree = "<group>";
+		};
+		EB5B3D2A20578A8A007FABC3 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				EB5B3D2B20578AA6007FABC3 /* ProductCell.swift */,
+				EB5B3D2C20578AA6007FABC3 /* ProductCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		EB5B3D2F2057920F007FABC3 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				EB5B3D302057923F007FABC3 /* StubResponse.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		EB5B3D3820579DDE007FABC3 /* Thank */ = {
+			isa = PBXGroup;
+			children = (
+				EB5B3D3920579DFA007FABC3 /* ThankViewController.swift */,
+			);
+			path = Thank;
+			sourceTree = "<group>";
+		};
+		EB5B3D3B20579E58007FABC3 /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				EB5B3D412057C00C007FABC3 /* Cell */,
+				EB5B3D3C20579E65007FABC3 /* CartViewController.swift */,
+			);
+			path = Cart;
+			sourceTree = "<group>";
+		};
+		EB5B3D3E20579EC1007FABC3 /* Checkout */ = {
+			isa = PBXGroup;
+			children = (
+				EB5B3D3F20579EDF007FABC3 /* CheckoutViewController.swift */,
+			);
+			path = Checkout;
+			sourceTree = "<group>";
+		};
+		EB5B3D412057C00C007FABC3 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				EB5B3D422057C03F007FABC3 /* CartCell.swift */,
+				EB5B3D432057C03F007FABC3 /* CartCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		EBDD963320578815009E33C5 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +231,8 @@
 				EBDD965620578816009E33C5 /* Walmart-iOSTests */,
 				EBDD966120578816009E33C5 /* Walmart-iOSUITests */,
 				EBDD963D20578815009E33C5 /* Products */,
+				430EADEE54A9CA50B44566E3 /* Pods */,
+				621667C00A5261E848458880 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,8 +249,11 @@
 		EBDD963E20578815009E33C5 /* Walmart-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				EB5B3D2F2057920F007FABC3 /* Utils */,
+				EB5B3D26205789D7007FABC3 /* Features */,
+				EB5B3D25205789CF007FABC3 /* Model */,
+				EB5B3D24205789C5007FABC3 /* Resources */,
 				EBDD963F20578815009E33C5 /* AppDelegate.swift */,
-				EBDD964120578815009E33C5 /* ViewController.swift */,
 				EBDD964320578815009E33C5 /* Main.storyboard */,
 				EBDD964920578815009E33C5 /* Assets.xcassets */,
 				EBDD964B20578815009E33C5 /* LaunchScreen.storyboard */,
@@ -135,9 +288,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EBDD966720578816009E33C5 /* Build configuration list for PBXNativeTarget "Walmart-iOS" */;
 			buildPhases = (
+				7A4648D0E50EAC7A00FAF867 /* [CP] Check Pods Manifest.lock */,
 				EBDD963820578815009E33C5 /* Sources */,
 				EBDD963920578815009E33C5 /* Frameworks */,
 				EBDD963A20578815009E33C5 /* Resources */,
+				C98870A62E7002182494698F /* [CP] Embed Pods Frameworks */,
+				AAA3CF591E5062C3E6461DDE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -152,9 +308,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EBDD966A20578816009E33C5 /* Build configuration list for PBXNativeTarget "Walmart-iOSTests" */;
 			buildPhases = (
+				F86F0BA66A08E524FFDAB40A /* [CP] Check Pods Manifest.lock */,
 				EBDD964F20578816009E33C5 /* Sources */,
 				EBDD965020578816009E33C5 /* Frameworks */,
 				EBDD965120578816009E33C5 /* Resources */,
+				88EFECAF1ABE98251B96D5E3 /* [CP] Embed Pods Frameworks */,
+				27E2FDB00AEFF0765B424D93 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -170,9 +329,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EBDD966D20578816009E33C5 /* Build configuration list for PBXNativeTarget "Walmart-iOSUITests" */;
 			buildPhases = (
+				528FC999FD934FCDC31FCD10 /* [CP] Check Pods Manifest.lock */,
 				EBDD965A20578816009E33C5 /* Sources */,
 				EBDD965B20578816009E33C5 /* Frameworks */,
 				EBDD965C20578816009E33C5 /* Resources */,
+				0E3F5CABB94FAE15F0AF0A8D /* [CP] Embed Pods Frameworks */,
+				ECB6830C17DE7E73E9087DFB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -235,7 +397,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB5B3D3320579278007FABC3 /* products.json in Resources */,
 				EBDD964D20578815009E33C5 /* LaunchScreen.storyboard in Resources */,
+				EB5B3D2E20578AA6007FABC3 /* ProductCell.xib in Resources */,
+				EB5B3D452057C03F007FABC3 /* CartCell.xib in Resources */,
 				EBDD964A20578815009E33C5 /* Assets.xcassets in Resources */,
 				EBDD964520578815009E33C5 /* Main.storyboard in Resources */,
 			);
@@ -257,14 +422,176 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0E3F5CABB94FAE15F0AF0A8D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Walmart-iOSUITests/Pods-Walmart-iOSUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		27E2FDB00AEFF0765B424D93 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Walmart-iOSTests/Pods-Walmart-iOSTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		528FC999FD934FCDC31FCD10 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Walmart-iOSUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7A4648D0E50EAC7A00FAF867 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Walmart-iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		88EFECAF1ABE98251B96D5E3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Walmart-iOSTests/Pods-Walmart-iOSTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AAA3CF591E5062C3E6461DDE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Walmart-iOS/Pods-Walmart-iOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C98870A62E7002182494698F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Walmart-iOS/Pods-Walmart-iOS-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Walmart-iOS/Pods-Walmart-iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ECB6830C17DE7E73E9087DFB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Walmart-iOSUITests/Pods-Walmart-iOSUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F86F0BA66A08E524FFDAB40A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Walmart-iOSTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		EBDD963820578815009E33C5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBDD964220578815009E33C5 /* ViewController.swift in Sources */,
+				EB5B3D2820578A59007FABC3 /* ProductViewController.swift in Sources */,
+				EB5B3D3A20579DFA007FABC3 /* ThankViewController.swift in Sources */,
+				EB5B3D2D20578AA6007FABC3 /* ProductCell.swift in Sources */,
 				EBDD964820578815009E33C5 /* Walmart_iOS.xcdatamodeld in Sources */,
+				EB5B3D442057C03F007FABC3 /* CartCell.swift in Sources */,
 				EBDD964020578815009E33C5 /* AppDelegate.swift in Sources */,
+				EB5B3D312057923F007FABC3 /* StubResponse.swift in Sources */,
+				EB5B3D3520579368007FABC3 /* Product.swift in Sources */,
+				EB5B3D3D20579E65007FABC3 /* CartViewController.swift in Sources */,
+				EB5B3D4020579EDF007FABC3 /* CheckoutViewController.swift in Sources */,
+				EB5B3D3720579517007FABC3 /* ProductResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,11 +755,13 @@
 		};
 		EBDD966820578816009E33C5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E1BFF0043670457695B19E9B /* Pods-Walmart-iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QWZQFWGZMG;
 				INFOPLIST_FILE = "Walmart-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.coderschool.Walmart-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -443,11 +772,13 @@
 		};
 		EBDD966920578816009E33C5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F8760BE5E2020F684ECAB1C6 /* Pods-Walmart-iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QWZQFWGZMG;
 				INFOPLIST_FILE = "Walmart-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.coderschool.Walmart-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -458,6 +789,7 @@
 		};
 		EBDD966B20578816009E33C5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 15335C781AB61EFE139A6EDE /* Pods-Walmart-iOSTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -475,6 +807,7 @@
 		};
 		EBDD966C20578816009E33C5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 62CAD06B59016705961CCFC6 /* Pods-Walmart-iOSTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -492,6 +825,7 @@
 		};
 		EBDD966E20578816009E33C5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E5FA39AA0246D5E75451CCDA /* Pods-Walmart-iOSUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -508,6 +842,7 @@
 		};
 		EBDD966F20578816009E33C5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D64AD5BD374331795E9A911E /* Pods-Walmart-iOSUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
