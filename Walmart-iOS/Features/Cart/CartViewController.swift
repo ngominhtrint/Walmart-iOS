@@ -19,6 +19,8 @@ class CartViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
 
     private let CartCellReuseIdentifier = "CartCellReuseIdentifier"
+    private let HeaderCellReuseIdentifier = "HeaderCellReuseIdentifier"
+    private let FooterCellReuseIdentifier = "FooterCellReuseIdentifier"
     weak var delegate: CartViewControllerDelegate?
     var dataSources: [Product] = []
     
@@ -52,6 +54,8 @@ class CartViewController: UIViewController {
     
     private func registerCell() {
         tableView.register(UINib(nibName: "CartCell", bundle: nil), forCellReuseIdentifier: CartCellReuseIdentifier)
+        tableView.register(UINib(nibName: "HeaderCell", bundle: nil), forCellReuseIdentifier: HeaderCellReuseIdentifier)
+        tableView.register(UINib(nibName: "FooterCell", bundle: nil), forCellReuseIdentifier: FooterCellReuseIdentifier)
     }
     
     private func updateCellQuantityLabel(indexPath: IndexPath) {
@@ -67,14 +71,28 @@ extension CartViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: CartCellReuseIdentifier, for: indexPath) as? CartCell {
-            cell.delegate = self
-            cell.indexPath = indexPath
-            cell.product = dataSources[indexPath.row]
-            cell.selectionStyle = .none
-            return cell
+        if indexPath.row == 0 { //render header cell
+            if let headerCell = tableView.dequeueReusableCell(withIdentifier: HeaderCellReuseIdentifier, for: indexPath) as? HeaderCell {
+                headerCell.selectionStyle = .none
+                return headerCell
+            }
+            return UITableViewCell()
+        } else if indexPath.row == dataSources.count - 1 { //render footer cell
+            if let footerCell = tableView.dequeueReusableCell(withIdentifier: FooterCellReuseIdentifier, for: indexPath) as? FooterCell {
+                footerCell.selectionStyle = .none
+                return footerCell
+            }
+            return UITableViewCell()
+        } else {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: CartCellReuseIdentifier, for: indexPath) as? CartCell {
+                cell.delegate = self
+                cell.indexPath = indexPath
+                cell.product = dataSources[indexPath.row]
+                cell.selectionStyle = .none
+                return cell
+            }
+            return UITableViewCell()
         }
-        return UITableViewCell()
     }
 }
 
@@ -94,6 +112,16 @@ extension CartViewController: UITableViewDelegate {
         }
         remove.backgroundColor = UIColor.red
         return [remove]
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == 0 {
+            return 120.0
+        } else if indexPath.row == dataSources.count - 1 {
+            return 320.0
+        } else {
+            return 200.0
+        }
     }
 }
 

@@ -30,7 +30,7 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$89.99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wEQ-Xd-HPb">
                         <rect key="frame" x="144" y="8" width="59" height="21"/>
                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.54117647058823526" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="textColor" red="0.074509803921568626" green="0.49019607843137253" blue="0.75686274509803919" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="was $149.99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fku-2C-Z38">
@@ -53,7 +53,7 @@
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0m4-RB-wxM">
                         <rect key="frame" x="144" y="100" width="120" height="36"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.54117647058823526" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.074509803921568626" green="0.49019607843137253" blue="0.75686274509803919" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="120" id="23l-hZ-NGY"/>
                             <constraint firstAttribute="height" constant="36" id="AIT-Co-dDs"/>

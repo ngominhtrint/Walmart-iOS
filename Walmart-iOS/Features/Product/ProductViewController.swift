@@ -58,7 +58,13 @@ class ProductViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "CartViewController", let cartViewController = segue.destination as? CartViewController {
-            cartViewController.dataSources = dataSources.filter { $0.isSelected }
+            var newDataSources = dataSources.filter { $0.isSelected }
+            if newDataSources.count > 0 {
+                newDataSources.insert(Product.initState(), at: 0)
+                newDataSources.insert(Product.initState(), at: newDataSources.count)
+            }
+            
+            cartViewController.dataSources = newDataSources
             cartViewController.delegate = self
         }
     }

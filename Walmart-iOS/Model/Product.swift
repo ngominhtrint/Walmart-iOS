@@ -32,4 +32,20 @@ struct Product: Mappable {
         photo <- map["photo"]
         ship <- map["ship"]
     }
+    
+    init(id: String, name: String, originPrice: Double, currentPrice: Double, rating: Double, photo: String, ship: String, quantity: Int, isSelected: Bool) {
+        self.id = id
+        self.name = name
+        self.originPrice = originPrice
+        self.currentPrice = currentPrice
+        self.rating = rating
+        self.photo = photo
+        self.ship = ship
+        self.quantity = quantity
+        self.isSelected = isSelected
+    }
+    
+    static func initState() -> Product {
+        return Product.init(id: "", name: "", originPrice: 0.0, currentPrice: 0.0, rating: 0.0, photo: "", ship: "", quantity: 0, isSelected: false)
+    }
 }

@@ -22,7 +22,7 @@ class ProductCell: UITableViewCell {
     @IBOutlet weak var lbShipping: UILabel!
     @IBOutlet weak var btnAddToCart: UIButton!
     
-    private let blue = UIColor(red: 0, green: 0, blue: 138/255, alpha: 1.0)
+    private let blue = UIColor(red: 19/255, green: 125/255, blue: 193/255, alpha: 1.0)
     private let green = UIColor(red: 0, green: 128/255, blue: 0, alpha: 1.0)
     
     weak var delegate: ProductCellDelegate?
