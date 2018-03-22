@@ -10,6 +10,7 @@
 		403F59A440E686EE23316047 /* Pods_Walmart_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9482747988AAA24E6F1715C4 /* Pods_Walmart_iOS.framework */; };
 		5A0D615A1F584CD6821F40F7 /* Pods_Walmart_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 219F974FFE94691C34C68F02 /* Pods_Walmart_iOSUITests.framework */; };
 		B089963D14BDEAF3B198F694 /* Pods_Walmart_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1FE38595D2B48536AF13F3E /* Pods_Walmart_iOSTests.framework */; };
+		EB3D320220635CA600B2DB2D /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D320120635CA600B2DB2D /* UIView+Ext.swift */; };
 		EB5B3D2820578A59007FABC3 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5B3D2720578A59007FABC3 /* ProductViewController.swift */; };
 		EB5B3D2D20578AA6007FABC3 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5B3D2B20578AA6007FABC3 /* ProductCell.swift */; };
 		EB5B3D2E20578AA6007FABC3 /* ProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB5B3D2C20578AA6007FABC3 /* ProductCell.xib */; };
@@ -58,6 +59,7 @@
 		D64AD5BD374331795E9A911E /* Pods-Walmart-iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Walmart-iOSUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Walmart-iOSUITests/Pods-Walmart-iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E1BFF0043670457695B19E9B /* Pods-Walmart-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Walmart-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Walmart-iOS/Pods-Walmart-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		E5FA39AA0246D5E75451CCDA /* Pods-Walmart-iOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Walmart-iOSUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Walmart-iOSUITests/Pods-Walmart-iOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		EB3D320120635CA600B2DB2D /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		EB5B3D2720578A59007FABC3 /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		EB5B3D2B20578AA6007FABC3 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		EB5B3D2C20578AA6007FABC3 /* ProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCell.xib; sourceTree = "<group>"; };
@@ -138,6 +140,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		EB3D31FE20635C2A00B2DB2D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EB3D320120635CA600B2DB2D /* UIView+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		EB5B3D24205789C5007FABC3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,6 +198,7 @@
 		EB5B3D2F2057920F007FABC3 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				EB3D31FE20635C2A00B2DB2D /* Extensions */,
 				EB5B3D302057923F007FABC3 /* StubResponse.swift */,
 			);
 			path = Utils;
@@ -588,6 +599,7 @@
 				EB5B3D3A20579DFA007FABC3 /* ThankViewController.swift in Sources */,
 				EB5B3D2D20578AA6007FABC3 /* ProductCell.swift in Sources */,
 				EB5B3D47205839AD007FABC3 /* ProductNavigationController.swift in Sources */,
+				EB3D320220635CA600B2DB2D /* UIView+Ext.swift in Sources */,
 				EBDD964820578815009E33C5 /* Walmart_iOS.xcdatamodeld in Sources */,
 				EB5B3D442057C03F007FABC3 /* CartCell.swift in Sources */,
 				EBDD964020578815009E33C5 /* AppDelegate.swift in Sources */,
