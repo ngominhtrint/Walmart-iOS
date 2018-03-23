@@ -35,6 +35,9 @@
                         <state key="normal" title="Check Out (2)">
                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
+                        <connections>
+                            <action selector="onCheckoutAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="lyR-ov-0P1"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>
@@ -49,6 +52,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="btnCheckout" destination="0u1-ms-2iG" id="pPT-wg-di9"/>
+                <outlet property="lbTotal" destination="fg0-14-pa6" id="94k-qd-gOs"/>
             </connections>
         </tableViewCell>
     </objects>

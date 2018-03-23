@@ -87,6 +87,9 @@
                                 <state key="normal" title="Check Out (3)">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onCheckoutAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="jm9-Rg-U86"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Congrats - you get free shipping on all items sold by Walmart!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LSS-hj-7Oz">
                                 <rect key="frame" x="8" y="209" width="272" height="36"/>
@@ -149,6 +152,10 @@
             <connections>
                 <outlet property="boundaryView" destination="I1c-eF-gpo" id="bug-UA-nYY"/>
                 <outlet property="btnCheckout" destination="ir1-Yn-gkG" id="lQ4-gz-aRy"/>
+                <outlet property="lbSubTotal" destination="XDk-1M-TiL" id="R90-rR-bvn"/>
+                <outlet property="lbSubtotalItem" destination="Vck-ka-j7B" id="k8F-Ot-op3"/>
+                <outlet property="lbTax" destination="4bZ-pl-00X" id="p1a-Gp-Vly"/>
+                <outlet property="lbTotal" destination="9yj-DX-rzc" id="yPL-zD-UFx"/>
             </connections>
         </tableViewCell>
     </objects>

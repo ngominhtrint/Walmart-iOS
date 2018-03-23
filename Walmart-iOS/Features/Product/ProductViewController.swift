@@ -60,8 +60,12 @@ class ProductViewController: UIViewController {
         if segue.identifier == "CartViewController", let cartViewController = segue.destination as? CartViewController {
             var newDataSources = dataSources.filter { $0.isSelected }
             if newDataSources.count > 0 {
-                newDataSources.insert(Product.initState(), at: 0)
-                newDataSources.insert(Product.initState(), at: newDataSources.count)
+                let totalItems = newDataSources.reduce(0) { $0 + $1.quantity }
+                let totalAmount = newDataSources.reduce(0) { $0 + Double($1.quantity) * $1.currentPrice! }
+                let headerItem = Product(subTotal: 0.0, total: totalAmount, totalItem: totalItems)
+                let footerItem = Product(subTotal: 0.0, total: totalAmount, totalItem: totalItems)
+                newDataSources.insert(headerItem, at: 0)
+                newDataSources.insert(footerItem, at: newDataSources.count)
             }
             
             cartViewController.dataSources = newDataSources

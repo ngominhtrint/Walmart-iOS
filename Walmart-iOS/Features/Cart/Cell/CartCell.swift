@@ -12,20 +12,24 @@ import AlamofireImage
 protocol CartCellDelegate: class {
     func onQuantityIncreased(indexPath: IndexPath)
     func onQuantityDecreased(indexPath: IndexPath)
+    func onRemoveAction(indexPath: IndexPath)
+    func onPickQuantity(indexPath: IndexPath)
 }
 
 class CartCell: UITableViewCell {
 
     @IBOutlet weak var ivProduct: UIImageView!
-    @IBOutlet weak var lbCurrentPrice: UILabel!
-    @IBOutlet weak var lbOriginPrice: UILabel!
     @IBOutlet weak var lbName: UILabel!
+    @IBOutlet weak var lbSoldBy: UILabel!
     @IBOutlet weak var lbShipping: UILabel!
-    @IBOutlet weak var lbQuantity: UILabel!
+    @IBOutlet weak var lbPrice: UILabel!
+    @IBOutlet weak var btnQuantity: UIButton!
+    @IBOutlet weak var btnSaveLater: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        btnQuantity.boundary(color: UIColor(red: 19/255, green: 125/255, blue: 193/255, alpha: 1))
+        btnSaveLater.boundary(color: UIColor(red: 19/255, green: 125/255, blue: 193/255, alpha: 1))
     }
     
     weak var delegate: CartCellDelegate?
@@ -33,15 +37,21 @@ class CartCell: UITableViewCell {
     var product: Product? {
         didSet {
             if let product = product, let photoPath = product.photo, let imageUrl = URL.init(string: photoPath),
-                let currentPrice = product.currentPrice, let originPrice = product.originPrice {
+                let currentPrice = product.currentPrice {
                 ivProduct.af_setImage(withURL: imageUrl)
-                lbCurrentPrice.text = "$\(currentPrice)"
                 lbName.text = product.name ?? ""
                 lbShipping.text = product.ship ?? ""
-                lbOriginPrice.text = originPrice == currentPrice ? "" : "was $\(originPrice)"
-                lbQuantity.text = String(describing: product.quantity)
+                lbPrice.text = "$\(String(describing: currentPrice))"
             }
         }
+    }
+    
+    @IBAction func onPickQuantity(_ sender: Any) {
+        delegate?.onPickQuantity(indexPath: indexPath)
+    }
+    
+    @IBAction func onRemoveAction(_ sender: Any) {
+        delegate?.onRemoveAction(indexPath: indexPath)
     }
     
     @IBAction func onAddClicked(_ sender: Any) {

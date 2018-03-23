@@ -20,6 +20,9 @@ struct Product: Mappable {
     var ship: String?
     var quantity: Int = 0
     var isSelected: Bool = false
+    var subTotal: Double = 0.0
+    var total: Double = 0.0
+    var totalItem: Int = 0
     
     init?(map: Map) { }
     
@@ -43,6 +46,13 @@ struct Product: Mappable {
         self.ship = ship
         self.quantity = quantity
         self.isSelected = isSelected
+    }
+    
+    init(subTotal: Double, total: Double, totalItem: Int) {
+        self.init(id: "", name: "", originPrice: 0.0, currentPrice: 0.0, rating: 0.0, photo: "", ship: "", quantity: 0, isSelected: false)
+        self.subTotal = subTotal
+        self.total = total
+        self.totalItem = totalItem
     }
     
     static func initState() -> Product {

@@ -57,10 +57,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qsw-do-Goz">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="617"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C1d-X2-vhq">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C1d-X2-vhq">
                                 <rect key="frame" x="0.0" y="617" width="375" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total amount: $218.99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NG2-vp-vT6">
@@ -94,18 +94,12 @@
                             <constraint firstItem="Qsw-do-Goz" firstAttribute="leading" secondItem="Cyq-SY-2T3" secondAttribute="leading" id="Lc7-1G-QrE"/>
                             <constraint firstItem="Qsw-do-Goz" firstAttribute="top" secondItem="s6X-og-Ynu" secondAttribute="top" id="VKD-NJ-vdi"/>
                             <constraint firstItem="Cyq-SY-2T3" firstAttribute="trailing" secondItem="Qsw-do-Goz" secondAttribute="trailing" id="bcW-7Y-nIf"/>
-                            <constraint firstItem="C1d-X2-vhq" firstAttribute="top" secondItem="Qsw-do-Goz" secondAttribute="bottom" id="dxc-6f-VMh"/>
+                            <constraint firstItem="Cyq-SY-2T3" firstAttribute="bottom" secondItem="Qsw-do-Goz" secondAttribute="bottom" id="gb4-Ia-PSg"/>
                             <constraint firstItem="Cyq-SY-2T3" firstAttribute="bottom" secondItem="C1d-X2-vhq" secondAttribute="bottom" id="zRZ-8F-SFw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Cyq-SY-2T3"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Cart" id="pDN-ua-qFi">
-                        <barButtonItem key="rightBarButtonItem" title="Checkout" id="fZ1-Hl-jbp">
-                            <connections>
-                                <segue destination="Wf7-FF-r7T" kind="push" id="h0N-9S-D34"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Cart" id="pDN-ua-qFi"/>
                     <connections>
                         <outlet property="lbTotalAmount" destination="NG2-vp-vT6" id="21k-Dx-9di"/>
                         <outlet property="lbTotalItems" destination="rNe-6b-vW8" id="uKe-n2-exL"/>
@@ -125,7 +119,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Card number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zcd-nb-nJM">
-                                <rect key="frame" x="16" y="104" width="343" height="50"/>
+                                <rect key="frame" x="16" y="60" width="343" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="8ZM-3n-5qp"/>
                                 </constraints>
@@ -134,7 +128,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="MM/YY" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AF4-Gb-0pe">
-                                <rect key="frame" x="16" y="170" width="343" height="50"/>
+                                <rect key="frame" x="16" y="126" width="343" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="f2U-02-YpM"/>
                                 </constraints>
@@ -143,7 +137,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="CVC/CVV" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="74z-2a-kIw">
-                                <rect key="frame" x="16" y="236" width="343" height="50"/>
+                                <rect key="frame" x="16" y="192" width="343" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="hds-a2-skX"/>
                                 </constraints>
@@ -571,6 +565,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cra-9Y-cSC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3116" y="133.5832083958021"/>
+        </scene>
+        <!--Pick Quantity View Controller-->
+        <scene sceneID="VGY-9F-K4J">
+            <objects>
+                <viewController storyboardIdentifier="PickQuantityViewController" id="vuM-K6-WVR" customClass="PickQuantityViewController" customModule="Walmart_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="l8t-1J-0Tb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4S0-qD-k5C">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="4S0-qD-k5C" secondAttribute="bottom" id="3Fo-6A-nAh"/>
+                            <constraint firstAttribute="trailing" secondItem="4S0-qD-k5C" secondAttribute="trailing" id="R5W-fh-9BK"/>
+                            <constraint firstItem="4S0-qD-k5C" firstAttribute="leading" secondItem="l8t-1J-0Tb" secondAttribute="leading" id="Yqy-w7-Ts9"/>
+                            <constraint firstItem="4S0-qD-k5C" firstAttribute="top" secondItem="l8t-1J-0Tb" secondAttribute="top" id="boI-Sn-7bN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kaW-3r-D3v"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="4S0-qD-k5C" id="Ulk-KL-wic"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gcw-Hp-gQD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3919.1999999999998" y="133.5832083958021"/>
         </scene>
         <!--Product Navigation Controller-->
         <scene sceneID="y5g-1h-ADR">

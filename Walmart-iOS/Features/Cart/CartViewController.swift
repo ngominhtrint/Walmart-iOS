@@ -59,9 +59,9 @@ class CartViewController: UIViewController {
     }
     
     private func updateCellQuantityLabel(indexPath: IndexPath) {
-        if let cell = tableView.cellForRow(at: indexPath) as? CartCell {
-            cell.lbQuantity.text = String(describing: dataSources[indexPath.row].quantity) 
-        }
+//        if let cell = tableView.cellForRow(at: indexPath) as? CartCell {
+//            cell.lbQuantity.text = String(describing: dataSources[indexPath.row].quantity) 
+//        }
     }
 }
 
@@ -73,13 +73,21 @@ extension CartViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 { //render header cell
             if let headerCell = tableView.dequeueReusableCell(withIdentifier: HeaderCellReuseIdentifier, for: indexPath) as? HeaderCell {
+                headerCell.delegate = self
+                headerCell.indexPath = indexPath
+                headerCell.product = dataSources[indexPath.row]
                 headerCell.selectionStyle = .none
+                headerCell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
                 return headerCell
             }
             return UITableViewCell()
         } else if indexPath.row == dataSources.count - 1 { //render footer cell
             if let footerCell = tableView.dequeueReusableCell(withIdentifier: FooterCellReuseIdentifier, for: indexPath) as? FooterCell {
+                footerCell.delegate = self
+                footerCell.indexPath = indexPath
+                footerCell.product = dataSources[indexPath.row]
                 footerCell.selectionStyle = .none
+                footerCell.separatorInset = UIEdgeInsets(top: 0, left: UIScreen.main.bounds.width, bottom: 0, right: 0)
                 return footerCell
             }
             return UITableViewCell()
@@ -89,6 +97,7 @@ extension CartViewController: UITableViewDataSource {
                 cell.indexPath = indexPath
                 cell.product = dataSources[indexPath.row]
                 cell.selectionStyle = .none
+                cell.separatorInset = UIEdgeInsets(top: 0, left: UIScreen.main.bounds.width, bottom: 0, right: 0)
                 return cell
             }
             return UITableViewCell()
@@ -101,31 +110,27 @@ extension CartViewController: UITableViewDelegate {
         return true
     }
     
-    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let remove = UITableViewRowAction(style: .normal, title: "Remove") { action, index in
-            self.delegate?.onRemovedProduct(id: self.dataSources[indexPath.row].id!)
-            self.dataSources.remove(at: indexPath.row)
-            self.tableView.reloadData()
-            
-            self.updateQuantity()
-            self.updateAmount()
-        }
-        remove.backgroundColor = UIColor.red
-        return [remove]
-    }
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0 {
             return 120.0
         } else if indexPath.row == dataSources.count - 1 {
             return 320.0
         } else {
-            return 200.0
+            return UITableViewAutomaticDimension
         }
     }
 }
 
 extension CartViewController: CartCellDelegate {
+    
+    func onRemoveAction(indexPath: IndexPath) {
+        self.delegate?.onRemovedProduct(id: self.dataSources[indexPath.row].id!)
+        self.dataSources.remove(at: indexPath.row)
+        self.tableView.reloadData()
+        self.updateQuantity()
+        self.updateAmount()
+    }
+    
     func onQuantityIncreased(indexPath: IndexPath) {
         dataSources[indexPath.row].quantity += 1
         updateCellQuantityLabel(indexPath: indexPath)
@@ -140,5 +145,36 @@ extension CartViewController: CartCellDelegate {
         updateCellQuantityLabel(indexPath: indexPath)
         updateQuantity()
         updateAmount()
+    }
+    
+    func onPickQuantity(indexPath: IndexPath) {
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertController.addAction(cancelAction)
+        
+        // Create custom content viewController
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let contentViewController = storyboard.instantiateViewController(withIdentifier: "PickQuantityViewController") as! PickQuantityViewController
+        contentViewController.preferredContentSize = contentViewController.view.bounds.size
+        alertController.setValue(contentViewController, forKey: "contentViewController")
+        present(alertController, animated: true, completion: nil)
+    }
+}
+
+extension CartViewController: HeaderCellDelegate {
+    func onCheckoutAction(indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let checkoutViewController = storyboard.instantiateViewController(withIdentifier: "CheckoutViewController") as? CheckoutViewController {
+            navigationController?.pushViewController(checkoutViewController, animated: true)
+        }
+    }
+}
+
+extension CartViewController: FooterCellDelegate {
+    func onCheckoutAction() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let checkoutViewController = storyboard.instantiateViewController(withIdentifier: "CheckoutViewController") as? CheckoutViewController {
+            navigationController?.pushViewController(checkoutViewController, animated: true)
+        }
     }
 }
