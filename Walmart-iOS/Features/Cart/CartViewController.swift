@@ -30,6 +30,11 @@ class CartViewController: UIViewController {
         setupView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupData()
+    }
+    
     private func setupView() {
         tableView.delegate = self
         tableView.dataSource = self
@@ -40,6 +45,11 @@ class CartViewController: UIViewController {
         registerCell()
         updateQuantity()
         updateAmount()
+    }
+    
+    private func setupData() {
+        dataSources = ProductManager.shared.loadCartItems()
+        tableView.reloadData()
     }
     
     private func updateAmount() {

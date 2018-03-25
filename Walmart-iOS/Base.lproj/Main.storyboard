@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rfo-H9-lg9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Zba-HW-TRS">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ptA-J9-hCx">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
@@ -35,9 +35,6 @@
                     <navigationItem key="navigationItem" title="Products" id="Jvd-hg-Ja6">
                         <barButtonItem key="rightBarButtonItem" title="Cart" id="M55-RE-aV0">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <connections>
-                                <segue destination="43j-IB-ZaX" kind="push" identifier="CartViewController" id="rLs-H5-liz"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -46,7 +43,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="476" y="133.5832083958021"/>
+            <point key="canvasLocation" x="-106" y="-183"/>
         </scene>
         <!--Cart-->
         <scene sceneID="yfW-zY-vTP">
@@ -57,11 +54,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qsw-do-Goz">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C1d-X2-vhq">
-                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="568" width="375" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total amount: $218.99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NG2-vp-vT6">
                                         <rect key="frame" x="8" y="16" width="153.5" height="18"/>
@@ -108,7 +105,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="evo-MQ-b0F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1320.8" y="133.5832083958021"/>
+            <point key="canvasLocation" x="-106" y="505"/>
         </scene>
         <!--Checkout-->
         <scene sceneID="WuH-Ww-nzm">
@@ -119,7 +116,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Card number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zcd-nb-nJM">
-                                <rect key="frame" x="16" y="60" width="343" height="50"/>
+                                <rect key="frame" x="16" y="104" width="343" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="8ZM-3n-5qp"/>
                                 </constraints>
@@ -128,7 +125,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="MM/YY" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AF4-Gb-0pe">
-                                <rect key="frame" x="16" y="126" width="343" height="50"/>
+                                <rect key="frame" x="16" y="170" width="343" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="f2U-02-YpM"/>
                                 </constraints>
@@ -137,7 +134,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="CVC/CVV" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="74z-2a-kIw">
-                                <rect key="frame" x="16" y="192" width="343" height="50"/>
+                                <rect key="frame" x="16" y="236" width="343" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="hds-a2-skX"/>
                                 </constraints>
@@ -162,11 +159,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="Checkout" id="Ts6-H9-3hx">
                         <barButtonItem key="rightBarButtonItem" title="Done" id="gD2-3G-xTq">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="BbP-GB-eXj" kind="push" id="aSL-0c-9Hd"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="tfCardNumber" destination="Zcd-nb-nJM" id="BwV-0D-gtC"/>
                         <outlet property="tfCvv" destination="74z-2a-kIw" id="kPG-WP-xyp"/>
@@ -175,7 +174,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="isV-07-n5m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2269.5999999999999" y="133.5832083958021"/>
+            <point key="canvasLocation" x="1038" y="134"/>
         </scene>
         <!--Thank you-->
         <scene sceneID="3Qe-YT-GBL">
@@ -564,7 +563,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cra-9Y-cSC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3116" y="133.5832083958021"/>
+            <point key="canvasLocation" x="1913" y="134"/>
         </scene>
         <!--Pick Quantity View Controller-->
         <scene sceneID="VGY-9F-K4J">
@@ -594,17 +593,35 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gcw-Hp-gQD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3919.1999999999998" y="133.5832083958021"/>
+            <point key="canvasLocation" x="4597.6000000000004" y="133.5832083958021"/>
         </scene>
-        <!--Product Navigation Controller-->
-        <scene sceneID="y5g-1h-ADR">
+        <!--Custom Tabbar View Controller-->
+        <scene sceneID="K5l-9s-wdi">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rfo-H9-lg9" customClass="ProductNavigationController" customModule="Walmart_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="Zba-HW-TRS" customClass="CustomTabbarViewController" customModule="Walmart_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xbw-Bt-Awh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="fSX-eA-Eg0" kind="relationship" relationship="viewControllers" id="lZ2-XF-LnD"/>
+                        <segue destination="Isu-fh-qvP" kind="relationship" relationship="viewControllers" id="3XW-2X-bUS"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uYe-Jq-Moj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1900" y="173"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="ncv-fP-THI">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fSX-eA-Eg0" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="tab_home" id="ktd-WJ-wxb"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pwh-5G-VK5">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wee-6J-FmG">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="0.074509803921568626" green="0.49019607843137253" blue="0.75686274509803919" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -612,15 +629,40 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ghQ-w4-9cK"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Vrj-Cu-wZ2"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5B0-Jw-Qrj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NcM-kT-lWS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-306" y="134"/>
+            <point key="canvasLocation" x="-946" y="-183"/>
+        </scene>
+        <!--Cart-->
+        <scene sceneID="dkr-1h-P5k">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Isu-fh-qvP" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Cart" image="tab_cart" id="6E7-AL-eBx"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CEO-RL-cVO">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.074509803920000006" green="0.49019607840000001" blue="0.75686274509999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="43j-IB-ZaX" kind="relationship" relationship="rootViewController" id="dW2-FQ-L0H"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2mf-cx-H1u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-947.20000000000005" y="505.54722638680664"/>
         </scene>
     </scenes>
     <resources>
+        <image name="tab_cart" width="20" height="23"/>
+        <image name="tab_home" width="22" height="22"/>
         <image name="truck" width="64" height="64"/>
     </resources>
 </document>

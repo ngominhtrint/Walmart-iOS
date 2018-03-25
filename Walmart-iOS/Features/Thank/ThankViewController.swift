@@ -33,7 +33,8 @@ class ThankViewController: UITableViewController {
     }
     
     @IBAction func onContinueShoppingClicked(_ sender: Any) {
-        (navigationController as! ProductNavigationController).isReset = true
+        ProductManager.shared.isReset = true
+        tabBarController?.selectedIndex = 0
         navigationController?.popToRootViewController(animated: true)
     }
 }

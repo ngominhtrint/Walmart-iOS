@@ -21,18 +21,18 @@ class ProductViewController: UIViewController {
         super.viewDidLoad()
 
         setupView()
+        ProductManager.shared.isReset = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: false)
-        
         setupData()
     }
     
     private func setupData() {
-        if (navigationController as! ProductNavigationController).isReset {
-            (navigationController as! ProductNavigationController).isReset = false
+        if ProductManager.shared.isReset {
+            ProductManager.shared.isReset = false
             
             let mapper = Mapper<ProductResponse>()
             let productsData = StubResponse.fromJSONFile("products")
@@ -40,6 +40,8 @@ class ProductViewController: UIViewController {
                 guard let productResponse = mapper.map(JSON: productsJSON) else { return }
                 dataSources = productResponse.products ?? []
                 tableView.reloadData()
+                
+                ProductManager.shared.products = dataSources
             }
         }
     }
@@ -58,17 +60,7 @@ class ProductViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "CartViewController", let cartViewController = segue.destination as? CartViewController {
-            var newDataSources = dataSources.filter { $0.isSelected }
-            if newDataSources.count > 0 {
-                let totalItems = newDataSources.reduce(0) { $0 + $1.quantity }
-                let totalAmount = newDataSources.reduce(0) { $0 + Double($1.quantity) * $1.currentPrice! }
-                let headerItem = Product(subTotal: 0.0, total: totalAmount, totalItem: totalItems)
-                let footerItem = Product(subTotal: 0.0, total: totalAmount, totalItem: totalItems)
-                newDataSources.insert(headerItem, at: 0)
-                newDataSources.insert(footerItem, at: newDataSources.count)
-            }
-            
-            cartViewController.dataSources = newDataSources
+            cartViewController.dataSources = ProductManager.shared.loadCartItems()
             cartViewController.delegate = self
         }
     }
@@ -93,8 +85,12 @@ extension ProductViewController: UITableViewDataSource {
 
 extension ProductViewController: ProductCellDelegate {
     func addToCart(indexPath: IndexPath) {
-        dataSources[indexPath.row].isSelected = !dataSources[indexPath.row].isSelected
-        dataSources[indexPath.row].quantity = 1
+        let products = ProductManager.shared.products
+        products[indexPath.row].isSelected = dataSources[indexPath.row].isSelected ? false : true
+        products[indexPath.row].quantity = 1
+        ProductManager.shared.save(newProducts: products)
+            
+        dataSources = ProductManager.shared.products
         tableView.reloadData()
     }
 }

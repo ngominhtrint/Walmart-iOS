@@ -15,6 +15,8 @@
 		EB3D32062063674800B2DB2D /* HeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB3D32042063674800B2DB2D /* HeaderCell.xib */; };
 		EB3D320B20636B5F00B2DB2D /* FooterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D320920636B5F00B2DB2D /* FooterCell.swift */; };
 		EB3D320C20636B5F00B2DB2D /* FooterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB3D320A20636B5F00B2DB2D /* FooterCell.xib */; };
+		EB42B6572067CF3B00B8A4D7 /* ProductManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB42B6562067CF3B00B8A4D7 /* ProductManager.swift */; };
+		EB42B65A2067EFAD00B8A4D7 /* CustomTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB42B6592067EFAD00B8A4D7 /* CustomTabbarViewController.swift */; };
 		EB5B3D2820578A59007FABC3 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5B3D2720578A59007FABC3 /* ProductViewController.swift */; };
 		EB5B3D2D20578AA6007FABC3 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5B3D2B20578AA6007FABC3 /* ProductCell.swift */; };
 		EB5B3D2E20578AA6007FABC3 /* ProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB5B3D2C20578AA6007FABC3 /* ProductCell.xib */; };
@@ -71,6 +73,8 @@
 		EB3D32042063674800B2DB2D /* HeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderCell.xib; sourceTree = "<group>"; };
 		EB3D320920636B5F00B2DB2D /* FooterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterCell.swift; sourceTree = "<group>"; };
 		EB3D320A20636B5F00B2DB2D /* FooterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FooterCell.xib; sourceTree = "<group>"; };
+		EB42B6562067CF3B00B8A4D7 /* ProductManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductManager.swift; sourceTree = "<group>"; };
+		EB42B6592067EFAD00B8A4D7 /* CustomTabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabbarViewController.swift; sourceTree = "<group>"; };
 		EB5B3D2720578A59007FABC3 /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		EB5B3D2B20578AA6007FABC3 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		EB5B3D2C20578AA6007FABC3 /* ProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCell.xib; sourceTree = "<group>"; };
@@ -162,6 +166,22 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		EB42B6552067CF2A00B8A4D7 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				EB42B6562067CF3B00B8A4D7 /* ProductManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		EB42B6582067EF7F00B8A4D7 /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				EB42B6592067EFAD00B8A4D7 /* CustomTabbarViewController.swift */,
+			);
+			path = Tabbar;
+			sourceTree = "<group>";
+		};
 		EB5B3D24205789C5007FABC3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +193,7 @@
 		EB5B3D25205789CF007FABC3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EB42B6552067CF2A00B8A4D7 /* Manager */,
 				EB5B3D3420579368007FABC3 /* Product.swift */,
 				EB5B3D3620579517007FABC3 /* ProductResponse.swift */,
 			);
@@ -182,6 +203,7 @@
 		EB5B3D26205789D7007FABC3 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				EB42B6582067EF7F00B8A4D7 /* Tabbar */,
 				EB5B3D3E20579EC1007FABC3 /* Checkout */,
 				EB5B3D3B20579E58007FABC3 /* Cart */,
 				EB5B3D3820579DDE007FABC3 /* Thank */,
@@ -639,7 +661,9 @@
 				EB5B3D442057C03F007FABC3 /* CartCell.swift in Sources */,
 				EBDD964020578815009E33C5 /* AppDelegate.swift in Sources */,
 				EB5B3D312057923F007FABC3 /* StubResponse.swift in Sources */,
+				EB42B65A2067EFAD00B8A4D7 /* CustomTabbarViewController.swift in Sources */,
 				EB3D320B20636B5F00B2DB2D /* FooterCell.swift in Sources */,
+				EB42B6572067CF3B00B8A4D7 /* ProductManager.swift in Sources */,
 				EB5B3D3520579368007FABC3 /* Product.swift in Sources */,
 				EB5B3D3D20579E65007FABC3 /* CartViewController.swift in Sources */,
 				EB5B3D4020579EDF007FABC3 /* CheckoutViewController.swift in Sources */,

@@ -9,8 +9,6 @@
 import UIKit
 
 class ProductNavigationController: UINavigationController {
-
-    var isReset: Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
