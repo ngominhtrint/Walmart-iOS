@@ -38,7 +38,6 @@ class FooterCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         boundaryView.boundary(color: UIColor.lightGray)
         btnCheckout.boundaryWithBackground(color: UIColor.orange)
     }

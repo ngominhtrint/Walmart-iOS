@@ -10,9 +10,13 @@ import UIKit
 
 class CustomTabbarViewController: UITabBarController {
     
-    var isReset: Bool = true {
-        didSet {
-            print("didSet isReset \(isReset)")
-        }
+    private let yellow = UIColor(red: 253/255, green: 209/255, blue: 89/255, alpha: 1)
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.tabBar.tintColor = yellow
+        self.tabBar.unselectedItemTintColor = UIColor.white
     }
+    
 }

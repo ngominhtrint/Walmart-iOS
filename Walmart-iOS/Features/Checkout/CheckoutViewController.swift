@@ -14,9 +14,10 @@ class CheckoutViewController: UIViewController {
     @IBOutlet weak var tfExpiredDate: UITextField!
     @IBOutlet weak var tfCvv: UITextField!
     
+    var products: [Product] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -26,7 +27,12 @@ class CheckoutViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-
         tfCardNumber.becomeFirstResponder()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ThankViewController", let thankViewController = segue.destination as? ThankViewController {
+            thankViewController.products = products
+        }
     }
 }

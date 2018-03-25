@@ -8,20 +8,14 @@
 
 import UIKit
 
-protocol CartViewControllerDelegate: class {
-    func onRemovedProduct(id: String)
-}
-
 class CartViewController: UIViewController {
 
-    @IBOutlet weak var lbTotalAmount: UILabel!
-    @IBOutlet weak var lbTotalItems: UILabel!
+    @IBOutlet weak var lbNoItems: UILabel!
     @IBOutlet weak var tableView: UITableView!
 
     private let CartCellReuseIdentifier = "CartCellReuseIdentifier"
     private let HeaderCellReuseIdentifier = "HeaderCellReuseIdentifier"
     private let FooterCellReuseIdentifier = "FooterCellReuseIdentifier"
-    weak var delegate: CartViewControllerDelegate?
     var dataSources: [Product] = []
     
     override func viewDidLoad() {
@@ -43,23 +37,13 @@ class CartViewController: UIViewController {
         tableView.estimatedRowHeight = 100
         
         registerCell()
-        updateQuantity()
-        updateAmount()
     }
     
     private func setupData() {
         dataSources = ProductManager.shared.loadCartItems()
         tableView.reloadData()
-    }
-    
-    private func updateAmount() {
-        let totalAmount = dataSources.reduce(0) { $0 + Double($1.quantity) * $1.currentPrice! }
-        lbTotalAmount.text = "Total amount: $\(totalAmount)"
-    }
-    
-    private func updateQuantity() {
-        let totalItems = dataSources.reduce(0) { $0 + $1.quantity }
-        lbTotalItems.text = "\(totalItems) items"
+        
+        lbNoItems.isHidden = dataSources.count != 0
     }
     
     private func registerCell() {
@@ -68,10 +52,12 @@ class CartViewController: UIViewController {
         tableView.register(UINib(nibName: "FooterCell", bundle: nil), forCellReuseIdentifier: FooterCellReuseIdentifier)
     }
     
-    private func updateCellQuantityLabel(indexPath: IndexPath) {
-//        if let cell = tableView.cellForRow(at: indexPath) as? CartCell {
-//            cell.lbQuantity.text = String(describing: dataSources[indexPath.row].quantity) 
-//        }
+    private func navigateToCheckout() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let checkoutViewController = storyboard.instantiateViewController(withIdentifier: "CheckoutViewController") as? CheckoutViewController {
+            checkoutViewController.products = dataSources
+            navigationController?.pushViewController(checkoutViewController, animated: true)
+        }
     }
 }
 
@@ -134,27 +120,17 @@ extension CartViewController: UITableViewDelegate {
 extension CartViewController: CartCellDelegate {
     
     func onRemoveAction(indexPath: IndexPath) {
-        self.delegate?.onRemovedProduct(id: self.dataSources[indexPath.row].id!)
-        self.dataSources.remove(at: indexPath.row)
-        self.tableView.reloadData()
-        self.updateQuantity()
-        self.updateAmount()
-    }
-    
-    func onQuantityIncreased(indexPath: IndexPath) {
-        dataSources[indexPath.row].quantity += 1
-        updateCellQuantityLabel(indexPath: indexPath)
-        updateQuantity()
-        updateAmount()
-    }
-    
-    func onQuantityDecreased(indexPath: IndexPath) {
-        if dataSources[indexPath.row].quantity > 1 {
-            dataSources[indexPath.row].quantity -= 1
+        let product = ProductManager.shared.loadCartItems()[indexPath.row]
+        for (index, element) in ProductManager.shared.products.enumerated() {
+            if element.id == product.id {
+                ProductManager.shared.products[index].isSelected = false
+                ProductManager.shared.products[index].quantity = 0
+            }
         }
-        updateCellQuantityLabel(indexPath: indexPath)
-        updateQuantity()
-        updateAmount()
+        dataSources = ProductManager.shared.loadCartItems()
+        
+        self.tableView.reloadData()
+        lbNoItems.isHidden = dataSources.count != 0
     }
     
     func onPickQuantity(indexPath: IndexPath) {
@@ -165,26 +141,35 @@ extension CartViewController: CartCellDelegate {
         // Create custom content viewController
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let contentViewController = storyboard.instantiateViewController(withIdentifier: "PickQuantityViewController") as! PickQuantityViewController
+        contentViewController.indexPath = indexPath
+        contentViewController.delegate = self
         contentViewController.preferredContentSize = contentViewController.view.bounds.size
         alertController.setValue(contentViewController, forKey: "contentViewController")
         present(alertController, animated: true, completion: nil)
     }
 }
 
+extension CartViewController: PickQuantityViewControllerDelegate {
+    func onPick(quantity: Int, indexPath: IndexPath) {
+        let product = ProductManager.shared.loadCartItems()[indexPath.row]
+        for (index, element) in ProductManager.shared.products.enumerated() {
+            if element.id == product.id {
+                ProductManager.shared.products[index].quantity = quantity
+            }
+        }
+        dataSources = ProductManager.shared.loadCartItems()
+        self.tableView.reloadData()
+    }
+}
+
 extension CartViewController: HeaderCellDelegate {
     func onCheckoutAction(indexPath: IndexPath) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        if let checkoutViewController = storyboard.instantiateViewController(withIdentifier: "CheckoutViewController") as? CheckoutViewController {
-            navigationController?.pushViewController(checkoutViewController, animated: true)
-        }
+        navigateToCheckout()
     }
 }
 
 extension CartViewController: FooterCellDelegate {
     func onCheckoutAction() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        if let checkoutViewController = storyboard.instantiateViewController(withIdentifier: "CheckoutViewController") as? CheckoutViewController {
-            navigationController?.pushViewController(checkoutViewController, animated: true)
-        }
+        navigateToCheckout()
     }
 }

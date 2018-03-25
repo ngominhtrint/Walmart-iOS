@@ -33,16 +33,17 @@ class ProductViewController: UIViewController {
     private func setupData() {
         if ProductManager.shared.isReset {
             ProductManager.shared.isReset = false
-            
             let mapper = Mapper<ProductResponse>()
             let productsData = StubResponse.fromJSONFile("products")
             if let productsJSON = try! JSONSerialization.jsonObject(with: productsData, options: []) as? [String: Any] {
                 guard let productResponse = mapper.map(JSON: productsJSON) else { return }
                 dataSources = productResponse.products ?? []
                 tableView.reloadData()
-                
                 ProductManager.shared.products = dataSources
             }
+        } else {
+            dataSources = ProductManager.shared.products
+            tableView.reloadData()
         }
     }
     
@@ -61,7 +62,6 @@ class ProductViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "CartViewController", let cartViewController = segue.destination as? CartViewController {
             cartViewController.dataSources = ProductManager.shared.loadCartItems()
-            cartViewController.delegate = self
         }
     }
 }
@@ -92,17 +92,5 @@ extension ProductViewController: ProductCellDelegate {
             
         dataSources = ProductManager.shared.products
         tableView.reloadData()
-    }
-}
-
-extension ProductViewController: CartViewControllerDelegate {
-    func onRemovedProduct(id: String) {
-        for (index, product) in dataSources.enumerated() {
-            if product.id! == id {
-                dataSources[index].isSelected = false
-                dataSources[index].quantity = 0
-                tableView.reloadData()
-            }
-        }
     }
 }

@@ -9,10 +9,5 @@
 import UIKit
 
 class NumberCell: UITableViewCell {
-
     @IBOutlet weak var lbNumber: UILabel!
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }    
 }

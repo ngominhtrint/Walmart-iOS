@@ -30,7 +30,6 @@ class ProductCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
     }
     
     var product: Product? {

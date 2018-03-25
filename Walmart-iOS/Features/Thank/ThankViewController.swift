@@ -10,10 +10,16 @@ import UIKit
 
 class ThankViewController: UITableViewController {
 
+    @IBOutlet weak var lbSubTotalItem: UILabel!
+    @IBOutlet weak var lbSubTotalPrice: UILabel!
+    @IBOutlet weak var lbTotalPrice: UILabel!
     @IBOutlet weak var btnContinueShopping: UIButton!
     @IBOutlet weak var btnOrderStatus: UIButton!
     @IBOutlet weak var shippingInfoView: UIView!
     @IBOutlet weak var orderSummaryView: UIView!
+    
+    var products: [Product] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,6 +36,12 @@ class ThankViewController: UITableViewController {
         btnOrderStatus.boundary(color: UIColor(red: 19/255, green: 125/255, blue: 193/255, alpha: 1.0))
         shippingInfoView.boundary(color: UIColor.lightGray)
         orderSummaryView.boundary(color: UIColor.lightGray)
+        
+        if let product = products.first {
+            lbSubTotalItem.text = "Subtotal (\(product.totalItem) items)"
+            lbSubTotalPrice.text = "$\(String(describing: product.total))"
+            lbTotalPrice.text = "$\(String(describing: product.total))"
+        }
     }
     
     @IBAction func onContinueShoppingClicked(_ sender: Any) {

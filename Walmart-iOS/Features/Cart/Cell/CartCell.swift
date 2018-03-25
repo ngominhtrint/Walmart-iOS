@@ -10,8 +10,6 @@ import UIKit
 import AlamofireImage
 
 protocol CartCellDelegate: class {
-    func onQuantityIncreased(indexPath: IndexPath)
-    func onQuantityDecreased(indexPath: IndexPath)
     func onRemoveAction(indexPath: IndexPath)
     func onPickQuantity(indexPath: IndexPath)
 }
@@ -42,6 +40,7 @@ class CartCell: UITableViewCell {
                 lbName.text = product.name ?? ""
                 lbShipping.text = product.ship ?? ""
                 lbPrice.text = "$\(String(describing: currentPrice))"
+                btnQuantity.setTitle("\(product.quantity)", for: .normal)
             }
         }
     }
@@ -52,13 +51,5 @@ class CartCell: UITableViewCell {
     
     @IBAction func onRemoveAction(_ sender: Any) {
         delegate?.onRemoveAction(indexPath: indexPath)
-    }
-    
-    @IBAction func onAddClicked(_ sender: Any) {
-        delegate?.onQuantityIncreased(indexPath: indexPath)
-    }
-    
-    @IBAction func onSubstractClicked(_ sender: Any) {
-        delegate?.onQuantityDecreased(indexPath: indexPath)
     }
 }
